@@ -1,0 +1,40 @@
+h1 {
+    font-family: 'Mogra', cursive;
+    color:rgb(0, 255, 149);
+    text-shadow: 2px 2px #000000;
+    font-size: 8rem;
+    text-align: center;
+}
+
+body {
+    background-color: rgb(87, 87, 87);
+}
+
+.players {
+    font-family: 'Nunito', sans-serif;
+    color:rgb(0, 255, 149);
+    text-shadow: 2px 2px #000000;
+    margin: auto;
+    width: 50%;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+}
+
+.players > div {
+    text-align: center;
+    display: inline-block;
+    margin: auto;
+}
+
+.dices {
+    margin: auto;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.dices > .dice {
+    display: inline-block;
+    margin: auto;
+}
