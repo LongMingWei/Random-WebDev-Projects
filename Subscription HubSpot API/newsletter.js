@@ -17,14 +17,12 @@ app.post('/', function(req,res) {
     var email = req.body.email;
     
     var data = {
-
         "properties": {
             "email": email,
             "firstname": first,
             "lastname": last
         }
-    
-}
+    }
     
     var jsondata = JSON.stringify(data);
     var url = "https://api.hubapi.com/crm/v3/objects/contacts";
@@ -37,18 +35,22 @@ app.post('/', function(req,res) {
     }
 
     var req = https.request(url,options,function(response) {
-        if(response.statusCode === 200) {
+        console.log(response.statusCode);
+        if(response.statusCode === 201) {
             res.send("Data sent");
         }
         else {
             res.send("Data not sent (Error)");
+        }
         response.on("data", function(data) {
             console.log(JSON.parse(data));
-        })
-    })
+        });
+    });
+
     req.write(jsondata);
     req.end();
 });
+
 
 app.listen(8000, function() {
     console.log('Server running at 8000');
