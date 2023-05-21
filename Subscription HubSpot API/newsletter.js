@@ -25,8 +25,7 @@ app.post('/', function(req,res) {
         }
     
 }
-    res.send("Data sent");
-
+    
     var jsondata = JSON.stringify(data);
     var url = "https://api.hubapi.com/crm/v3/objects/contacts";
     var options = {
@@ -38,6 +37,11 @@ app.post('/', function(req,res) {
     }
 
     var req = https.request(url,options,function(response) {
+        if(response.statusCode === 200) {
+            res.send("Data sent");
+        }
+        else {
+            res.send("Data not sent (Error)");
         response.on("data", function(data) {
             console.log(JSON.parse(data));
         })
