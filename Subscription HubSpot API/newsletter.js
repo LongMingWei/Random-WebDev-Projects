@@ -29,7 +29,7 @@ app.post('/', function(req,res) {
     var options = {
         method: "POST",
         headers: {
-            "Authorization": "Bearer pat-na1-75789f7e-3003-44e6-8438-05ecf058cb16",
+            "Authorization": "Bearer INSERT API KEY HERE",
             "Content-Type": "application/json"
         }
     }
